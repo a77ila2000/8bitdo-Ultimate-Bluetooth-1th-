@@ -110,6 +110,8 @@ def write_outputs(outputs, destination):
     destination.mkdir(parents=True, exist_ok=True)
     for name, content in outputs.items():
         target = destination / name
+        require(target.resolve().is_relative_to(destination.resolve()), 'Output path escapes destination')
+        target.parent.mkdir(parents=True, exist_ok=True)
         if target.exists():
             require(target.read_bytes() == content, f'Existing file differs: {target.name}; use a fresh output folder')
         else:
@@ -148,10 +150,14 @@ def prepare_updater(archive_bytes, destination):
             parts = Path(item.filename.replace('\\', '/')).parts
             require(not Path(item.filename).is_absolute() and '..' not in parts and
                     ((item.external_attr >> 16) & 0o170000) != 0o120000, 'Unsafe updater archive member')
-            if item.is_dir() or Path(item.filename).suffix.lower() not in ('.dll', '.exe', '.config'):
+            if item.is_dir():
                 continue
-            name = Path(item.filename).name
+            require(len(parts) >= 2 and parts[0] == '8BitDo_Firmware_Updater_Win', 'Unexpected updater archive root')
+            name = '/'.join(parts[1:])
             require(name not in outputs, 'Duplicate updater member')
+            # Manufacturer logs are mutable runtime state; seed them once.
+            if name in ('data/debugLog.txt', 'data/updateLog.txt') and (destination / name).exists():
+                continue
             outputs[name] = archive.read(item)
     require(sha(outputs.get('8BitDoFirmwareUpdaterTools.dll', b'')) == DLL_SHA and
             sha(outputs.get('8BitDo Firmware Updater.exe', b'')) == UPDATER_SHA, 'Updater executable/DLL identity changed')

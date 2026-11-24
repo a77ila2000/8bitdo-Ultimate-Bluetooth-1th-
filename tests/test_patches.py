@@ -1,4 +1,6 @@
 from pathlib import Path
+import io
+import zipfile
 import os
 import pytest
 import patcher
@@ -6,6 +8,23 @@ import patch_source as source
 import receiver_format
 from vendor import cryptdo8
 from tests.instruction_vm import ThumbSampler, battery_run, Replay
+
+
+def test_updater_preserves_required_data_subdirectory(tmp_path, monkeypatch):
+    files={'8BitDo Firmware Updater.exe':b'exe', '8BitDoFirmwareUpdaterTools.dll':b'dll',
+           'data/versions.txt':b'2.52', 'data/debugLog.txt':b'', 'data/Autoupdate.exe':b'auto'}
+    blob=io.BytesIO()
+    with zipfile.ZipFile(blob,'w') as z:
+        for name,data in files.items():z.writestr('8BitDo_Firmware_Updater_Win/'+name,data)
+    monkeypatch.setattr(patcher,'check_stock',lambda data,kind:None)
+    monkeypatch.setattr(patcher,'DLL_SHA',patcher.sha(b'dll'))
+    monkeypatch.setattr(patcher,'UPDATER_SHA',patcher.sha(b'exe'))
+    patcher.prepare_updater(blob.getvalue(),tmp_path)
+    for name,data in files.items():assert (tmp_path/name).read_bytes()==data
+    assert not (tmp_path/'Autoupdate.exe').exists()
+    (tmp_path/'data/debugLog.txt').write_bytes(b'local runtime log')
+    patcher.prepare_updater(blob.getvalue(),tmp_path)
+    assert (tmp_path/'data/debugLog.txt').read_bytes()==b'local runtime log'
 
 
 @pytest.fixture(scope='module')

@@ -1,0 +1,96 @@
+{
+  "controller": "Controller B",
+  "dat_sha256": "dee297b7c1a5f0b0646f05fc16f792be94df1e52cc478338f1780612fd897767",
+  "normal_app_full_readback_match": true,
+  "normal_app_bytes": 105472,
+  "normal_app_sha256": "825e03d4c9f920e885bdb6a20fee519a4a28863d51ba4eb91e66f3b8e53a997b",
+  "following_512_bytes_erased": true,
+  "readback_bytes": 105984,
+  "readback_sha256": "923eafd0e7b154d585b39a8fe1a264cadf2a6b399f845375f3a3c458f67a7116",
+  "source": "Public adapter file-update path after preserving official data subdirectory",
+  "flash_exit_code": 0,
+  "flash_max_progress": 100,
+  "flash_error_callback": false,
+  "date": "2026-11-24",
+  "physical_input_mode": "Direct USB, rear switch2.4G",
+  "physical_input": {
+    "first_test_seconds": 15.003,
+    "buttons": {
+      "UP": {
+        "down": 3,
+        "up": 3
+      },
+      "DOWN": {
+        "down": 2,
+        "up": 2
+      },
+      "LEFT": {
+        "down": 2,
+        "up": 2
+      },
+      "RIGHT": {
+        "down": 4,
+        "up": 4
+      },
+      "A": {
+        "down": 6,
+        "up": 6
+      },
+      "B": {
+        "down": 5,
+        "up": 5
+      },
+      "X": {
+        "down": 7,
+        "up": 7
+      },
+      "Y": {
+        "down": 6,
+        "up": 6
+      }
+    },
+    "axes_min": {
+      "lx": -32768,
+      "ly": -31105,
+      "rx": -32768,
+      "ry": -32768
+    },
+    "axes_max": {
+      "lx": 32767,
+      "ly": 32767,
+      "rx": 32767,
+      "ry": 32767
+    },
+    "second_test_seconds": 10.002,
+    "bumpers": {
+      "LB": {
+        "down": 3,
+        "up": 3
+      },
+      "RB": {
+        "down": 3,
+        "up": 3
+      }
+    },
+    "lt_range": [
+      0,
+      255
+    ],
+    "rt_range": [
+      0,
+      255
+    ],
+    "final_values": {
+      "buttons": 0,
+      "lt": 0,
+      "rt": 0,
+      "lx": 0,
+      "ly": 0,
+      "rx": 0,
+      "ry": 0
+    },
+    "disconnects_observed": 0
+  },
+  "controller_b_rf_rate_measured": false,
+  "controller_b_long_session_poweroff_fix_proven": false
+}

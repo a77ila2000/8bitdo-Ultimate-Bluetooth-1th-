@@ -71,6 +71,8 @@ class FlashTool {
         if(IntPtr.Size!=4)throw new Exception("x86 runtime required");
         string dir=Path.Combine(Root,"vendor-runtime"), dll=Path.Combine(dir,Dll);
         if(Hash(dll)!=DllHash)throw new Exception("Wrong vendor DLL; run PatchTool.exe prepare");
+        foreach(string name in new[]{"versions.txt","debugLog.txt","updateLog.txt","Autoupdate.exe","ICSharpCode.SharpZipLib.dll"})
+            if(!File.Exists(Path.Combine(dir,"data",name)))throw new Exception("Incomplete manufacturer data folder; run PatchTool.exe prepare before loading the DLL");
         Environment.CurrentDirectory=dir;
         if(LoadLibraryEx(dll,IntPtr.Zero,0x1100)==IntPtr.Zero)throw new Exception("Cannot load pinned manufacturer DLL: "+Marshal.GetLastWin32Error());
     }

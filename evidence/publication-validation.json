@@ -3,7 +3,7 @@
   "scope": "Public Windows package checks; no device flashing performed",
   "python": "3.11.9",
   "pyinstaller": "6.17.0",
-  "pytest": "8 tests passed, including 9240 ADC,1536 battery states and1080 final scheduler cases",
+  "pytest": "9 tests passed; includes a regression that failed on the original updater folder-flattening implementation",
   "fresh_official_download_and_six_dat_hashes": true,
   "standalone_no_python_required_generation": true,
   "flash_adapter_checks": [
@@ -51,7 +51,11 @@
   ],
   "unknown_and_modified_images_rejected": true,
   "executables": {
-    "PatchTool.exe": "487341fd2eda1053e7d4a8bc043eb21a553aa04ad7b82d5837149eb795c036e4",
-    "FlashTool.exe": "99299cf85f71261a1698c7261a94cdb524d48e2362bcabc5bad86c533f2c4b80"
-  }
+    "PatchTool.exe": "bc32b3c1d39f732235357fcfb18fbd4403e9107630b404d49dd3c339496d5e7a",
+    "FlashTool.exe": "e2e5eb8a95f26e96007d0414fb9669c48e9ce1b67846ee36d90b3ca03ce3f3ad"
+  },
+  "release": "v0.1.2-experimental",
+  "official_data_subdirectory_preserved": true,
+  "missing_data_guard_rejects_before_dll_load": true,
+  "repeat_prepare_preserves_mutable_vendor_logs": true
 }
