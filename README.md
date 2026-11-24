@@ -74,6 +74,7 @@ Switch 2 깨우기·백버튼 리매핑 패치를 합친 펌웨어가 아닙니�
 
 - [처음부터 최종본까지 전체 작업 이력](docs/HISTORY.ko.md)
 - [수정 위치·시간 계산·한계](docs/TECHNICAL.ko.md)
+- [후속 성능 개선 비교와 실행 계획](docs/PERFORMANCE_PLAN.ko.md)
 - [검증 수치와 남은 시험](docs/VALIDATION.ko.md), [공개 집계 자료](evidence/)
 - [비교한 GitHub 프로젝트·공식 출처·라이선스](docs/SOURCES.md)
 - [정확한 바이트 패치와 해시](patches/), [직접 작성한 Thumb 페이로드 소스](patch_source.py)

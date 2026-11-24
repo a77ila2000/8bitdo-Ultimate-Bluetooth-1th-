@@ -1,0 +1,672 @@
+{
+  "date": "2026-11-24",
+  "scope": "Read-only original Ghidra body queries and offline byte comparisons; no firmware/device changes",
+  "profiles": {
+    "stock_controller_1_11": {
+      "plain_bytes": 104960,
+      "plain_sha256": "fa653c10bba23ec346ea92b85493a37b0b6dda53534c7257214c4d41f80ada8d"
+    },
+    "adc_battery": {
+      "plain_bytes": 104960,
+      "plain_sha256": "ae5f5a21784b4839294c4547c5d75f120287972220b0214db422f55f189fcb6e"
+    },
+    "first_2ms": {
+      "plain_bytes": 104960,
+      "plain_sha256": "d80d79241cf32db6ae8dcbf1e10b0a124bec502216c2be95876556ae16ef50d9"
+    },
+    "enhanced": {
+      "plain_bytes": 105472,
+      "plain_sha256": "825e03d4c9f920e885bdb6a20fee519a4a28863d51ba4eb91e66f3b8e53a997b"
+    }
+  },
+  "original_function_bodies_compared_with_all_profiles": [
+    {
+      "entry": "0x0101dae4",
+      "name": "FUN_0101dae4",
+      "body_ranges": [
+        {
+          "first": "0x101dae4",
+          "last_inclusive": "0x101db4b"
+        }
+      ],
+      "original_callees": [
+        "0x0101bc00",
+        "0x0101fe34",
+        "0x010217fc",
+        "0x01023700",
+        "0x010238a4",
+        "0x01023c68",
+        "0x01026378",
+        "0x010285f8",
+        "0x0102b9a8",
+        "0x0102bcf0"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 14
+      }
+    },
+    {
+      "entry": "0x0101fe34",
+      "name": "FUN_0101fe34",
+      "body_ranges": [
+        {
+          "first": "0x101fe34",
+          "last_inclusive": "0x1020115"
+        }
+      ],
+      "original_callees": [
+        "0x0101bf14",
+        "0x0101bfec",
+        "0x0101db54",
+        "0x0101e128",
+        "0x0101e248",
+        "0x0101e314",
+        "0x0101e36c",
+        "0x0101e98c",
+        "0x0101efdc",
+        "0x0101f8f8",
+        "0x010202dc",
+        "0x01020424",
+        "0x01021848",
+        "0x01021e44",
+        "0x01021f08",
+        "0x010235fc",
+        "0x01023c68",
+        "0x01023e2c",
+        "0x01023f1c",
+        "0x01024070",
+        "0x0102409c",
+        "0x010240b8",
+        "0x010241b8",
+        "0x010242e4",
+        "0x01024850",
+        "0x01024890",
+        "0x01024bc8",
+        "0x01026378",
+        "0x010263a8",
+        "0x010268a2",
+        "0x01027460",
+        "0x0102a0f4",
+        "0x0102a62c",
+        "0x0102c0f8",
+        "0x0102c268",
+        "0x0102d1bc"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 3
+      }
+    },
+    {
+      "entry": "0x0101e9e4",
+      "name": "FUN_0101e9e4",
+      "body_ranges": [
+        {
+          "first": "0x101e9e4",
+          "last_inclusive": "0x101ea1b"
+        }
+      ],
+      "original_callees": [
+        "0x01018240",
+        "0x01028138"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 7,
+        "enhanced": 7
+      }
+    },
+    {
+      "entry": "0x0102a0f4",
+      "name": "FUN_0102a0f4",
+      "body_ranges": [
+        {
+          "first": "0x102a0f4",
+          "last_inclusive": "0x102a179"
+        }
+      ],
+      "original_callees": [
+        "0x01018214",
+        "0x01018268",
+        "0x01018ad8",
+        "0x0101ea90",
+        "0x0102a058"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x01024890",
+      "name": "FUN_01024890",
+      "body_ranges": [
+        {
+          "first": "0x1024890",
+          "last_inclusive": "0x1024925"
+        }
+      ],
+      "original_callees": [
+        "0x0101c7d8",
+        "0x01023c68",
+        "0x01024070",
+        "0x01025ad4",
+        "0x0102a034"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x010242e4",
+      "name": "FUN_010242e4",
+      "body_ranges": [
+        {
+          "first": "0x10242e4",
+          "last_inclusive": "0x10246db"
+        },
+        {
+          "first": "0x1024710",
+          "last_inclusive": "0x102483d"
+        }
+      ],
+      "original_callees": [
+        "0x01018268",
+        "0x0101829a",
+        "0x0101c7e2",
+        "0x0101d148",
+        "0x0101e308",
+        "0x0101e338",
+        "0x0101e3c4",
+        "0x0101e818",
+        "0x0101e980",
+        "0x0101e98c",
+        "0x0101e9a4",
+        "0x0101e9b0",
+        "0x0101ec64",
+        "0x0101f5e4",
+        "0x0101f884",
+        "0x0101fd2c",
+        "0x01020a70",
+        "0x01020d40",
+        "0x0102123c",
+        "0x010213d0",
+        "0x010213f8",
+        "0x01022240",
+        "0x01022c6c",
+        "0x010238cc",
+        "0x01023bb4",
+        "0x01023c68",
+        "0x01023e48",
+        "0x01023f1c",
+        "0x01024074",
+        "0x0102409c",
+        "0x010241a4",
+        "0x0102543c",
+        "0x010276f4",
+        "0x0102ab6e",
+        "0x0102c010",
+        "0x0102ca66"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x010241b8",
+      "name": "FUN_010241b8",
+      "body_ranges": [
+        {
+          "first": "0x10241b8",
+          "last_inclusive": "0x102429f"
+        }
+      ],
+      "original_callees": [
+        "0x0101b920",
+        "0x0101ee68",
+        "0x01024ea8",
+        "0x0102556c"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x0101e36c",
+      "name": "FUN_0101e36c",
+      "body_ranges": [
+        {
+          "first": "0x101e36c",
+          "last_inclusive": "0x101e38f"
+        }
+      ],
+      "original_callees": [
+        "0x0101ba70",
+        "0x0102578c"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x010213d0",
+      "name": "FUN_010213d0",
+      "body_ranges": [
+        {
+          "first": "0x10213d0",
+          "last_inclusive": "0x10213f7"
+        }
+      ],
+      "original_callees": [
+        "0x01018268",
+        "0x0101e104"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x0102ab6e",
+      "name": "FUN_0102ab6e",
+      "body_ranges": [
+        {
+          "first": "0x102ab6e",
+          "last_inclusive": "0x102ab7f"
+        }
+      ],
+      "original_callees": [
+        "0x0101a8a8"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x0101a8a8",
+      "name": "FUN_0101a8a8",
+      "body_ranges": [
+        {
+          "first": "0x101a8a8",
+          "last_inclusive": "0x101a905"
+        }
+      ],
+      "original_callees": [
+        "0x010182f0",
+        "0x010190fc",
+        "0x0101911e",
+        "0x01026880",
+        "0x010281b4",
+        "0x010281c0"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x010281b4",
+      "name": "FUN_010281b4",
+      "body_ranges": [
+        {
+          "first": "0x10281b4",
+          "last_inclusive": "0x10281b9"
+        }
+      ],
+      "original_callees": [],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x010281c0",
+      "name": "FUN_010281c0",
+      "body_ranges": [
+        {
+          "first": "0x10281c0",
+          "last_inclusive": "0x1028209"
+        }
+      ],
+      "original_callees": [
+        "0x01018214",
+        "0x01018240",
+        "0x010281b4"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x0102bbc0",
+      "name": "FUN_0102bbc0",
+      "body_ranges": [
+        {
+          "first": "0x102bbc0",
+          "last_inclusive": "0x102bbd9"
+        }
+      ],
+      "original_callees": [
+        "0x0102bbfc"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x0102bcf0",
+      "name": "FUN_0102bcf0",
+      "body_ranges": [
+        {
+          "first": "0x102bcf0",
+          "last_inclusive": "0x102bd07"
+        }
+      ],
+      "original_callees": [
+        "0x0102b9c0"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x0102d1bc",
+      "name": "FUN_0102d1bc",
+      "body_ranges": [
+        {
+          "first": "0x102d1bc",
+          "last_inclusive": "0x102d1fb"
+        },
+        {
+          "first": "0x102d200",
+          "last_inclusive": "0x102d3fd"
+        },
+        {
+          "first": "0x102d400",
+          "last_inclusive": "0x102d5b9"
+        },
+        {
+          "first": "0x102d628",
+          "last_inclusive": "0x102d687"
+        },
+        {
+          "first": "0x102d68a",
+          "last_inclusive": "0x102da1d"
+        },
+        {
+          "first": "0x102da60",
+          "last_inclusive": "0x102dabf"
+        }
+      ],
+      "original_callees": [
+        "0x01018268",
+        "0x0101828c",
+        "0x0101829a",
+        "0x010182b0",
+        "0x010182ca",
+        "0x0101d148",
+        "0x0101df04",
+        "0x0101e4b0",
+        "0x0101e504",
+        "0x0102409c",
+        "0x01027478",
+        "0x010276b8",
+        "0x010277a8",
+        "0x010277ea",
+        "0x0102b730",
+        "0x0102be94",
+        "0x0102bfdc",
+        "0x0102c010",
+        "0x0102ca66",
+        "0x0102d1fc"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x01024bc8",
+      "name": "FUN_01024bc8",
+      "body_ranges": [
+        {
+          "first": "0x1024bc8",
+          "last_inclusive": "0x1024d2f"
+        }
+      ],
+      "original_callees": [
+        "0x01018f68",
+        "0x0101ce40",
+        "0x010228de",
+        "0x010228ea",
+        "0x010228f6"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x0101db54",
+      "name": "FUN_0101db54",
+      "body_ranges": [
+        {
+          "first": "0x101db54",
+          "last_inclusive": "0x101dd35"
+        }
+      ],
+      "original_callees": [
+        "0x01018268",
+        "0x0101829a",
+        "0x01018f68",
+        "0x0101ce40",
+        "0x0101e55c",
+        "0x0101e9a4",
+        "0x010228de",
+        "0x010228f6",
+        "0x01026900",
+        "0x0102700c",
+        "0x0102cfcc"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x01023e9c",
+      "name": "FUN_01023e9c",
+      "body_ranges": [
+        {
+          "first": "0x1023e9c",
+          "last_inclusive": "0x1023f0f"
+        }
+      ],
+      "original_callees": [
+        "0x0101e11c",
+        "0x01023e98"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 12,
+        "first_2ms": 12,
+        "enhanced": 12
+      }
+    },
+    {
+      "entry": "0x0101ea90",
+      "name": "FUN_0101ea90",
+      "body_ranges": [
+        {
+          "first": "0x101ea90",
+          "last_inclusive": "0x101eafb"
+        }
+      ],
+      "original_callees": [
+        "0x01018a10",
+        "0x01018ad8",
+        "0x01026358",
+        "0x0102694c",
+        "0x0102bde8"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 1,
+        "first_2ms": 1,
+        "enhanced": 1
+      }
+    },
+    {
+      "entry": "0x0102a364",
+      "name": "FUN_0102a364",
+      "body_ranges": [
+        {
+          "first": "0x102a364",
+          "last_inclusive": "0x102a3a3"
+        }
+      ],
+      "original_callees": [
+        "0x01018214",
+        "0x01026378",
+        "0x0102c0f8"
+      ],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    },
+    {
+      "entry": "0x01023700",
+      "name": "FUN_01023700",
+      "body_ranges": [
+        {
+          "first": "0x1023700",
+          "last_inclusive": "0x102370b"
+        }
+      ],
+      "original_callees": [],
+      "changed_bytes_from_stock": {
+        "stock_controller_1_11": 0,
+        "adc_battery": 0,
+        "first_2ms": 0,
+        "enhanced": 0
+      }
+    }
+  ],
+  "indirect_callback_resolution": [
+    {
+      "role": "adc_accumulator",
+      "verified_thumb_entry": "0x102a074",
+      "pointer_address": "0x101b8e4",
+      "pointer_value": "0x102a075",
+      "range_first": "0x102a074",
+      "range_end_exclusive": "0x102a0ea",
+      "unchanged_in_enhanced": true,
+      "ghidra_original_database_function_entry_recovered": false,
+      "basis": "Raw pointer and Thumb range; absent from old function index is an analysis coverage gap, not proof the address is wrong"
+    },
+    {
+      "role": "run_loop_excerpt",
+      "verified_thumb_entry": "0x102bab6",
+      "pointer_address": "0x1030e50",
+      "pointer_value": "0x102bab7",
+      "range_first": "0x102bac8",
+      "range_end_exclusive": "0x102bb32",
+      "unchanged_in_enhanced": true,
+      "ghidra_original_database_function_entry_recovered": false,
+      "basis": "Raw pointer and Thumb range; absent from old function index is an analysis coverage gap, not proof the address is wrong"
+    }
+  ],
+  "historical_same_tag_comparison": {
+    "before_hz": 244.74472828154126,
+    "after_hz": 289.08061573983537,
+    "relative_increase_percent": 18.115155235250867,
+    "observed_after_hz": 288.97034276034276,
+    "before_median_ms": 4.031299999951443,
+    "after_median_ms": 3.84940000003553,
+    "before_p99_ms": 8.225705000131711,
+    "after_p99_ms": 8.130960000125924,
+    "after_unobserved_ids": 6,
+    "caveat": "Two sequential runs, not repeated randomized comparison; source generator bypasses physical buttons"
+  },
+  "historical_diagnostic_pair": {
+    "before_plain_sha256": "3ec311d0c6593df5f639a0ebe8a99e5a4c49c81c1bdeedd8f3b74b8e56666453",
+    "after_plain_sha256": "3b11194f0b578583ae8ff5f48ba4a7061977660e996865a7183a2798a647dd88",
+    "image_bytes": 105984,
+    "equal_byte_count": 105980,
+    "different_byte_count": 4,
+    "different_addresses": [
+      "0x1031a70",
+      "0x1031a73",
+      "0x1031a90",
+      "0x1031a91"
+    ],
+    "meaning": "Only the four physical-selector guard bytes differ; the common getter diagnostic code is identical"
+  },
+  "generation_interval_equivalent_ms": 3.4592426664123774,
+  "interval_difference_to_500hz_ms": 1.4592426664123774,
+  "timing_source_candidate": {
+    "time_getter": "0x010281b4",
+    "time_getter_sram_counter": "0x20034",
+    "systick_setup": "0x01028138",
+    "systick_register_base": "0xe000e000",
+    "systick_setup_reset_counter": "0x20034",
+    "timeout_counter_wrap_literal": "0x7fffffff",
+    "timeout_clock_literal": 192000000,
+    "timeout_scaling_uses_systick_load": true,
+    "profiling_proposal": "Validate a coherent epoch plus SysTick VAL/LOAD timestamp; do not treat SRAM tick reads as microseconds",
+    "live_subtick_resolution_and_interrupt_races_verified": false
+  },
+  "limits": [
+    "The reciprocal rate is an average spacing, not measured CPU execution time",
+    "No actual physical-button latency measurement or stock1.11 same-method baseline",
+    "Transport candidates are static; active2.4G execution and dwell times require profiling",
+    "Function ranges/callees describe original analysis metadata; appended enhanced payloads are documented separately"
+  ]
+}
