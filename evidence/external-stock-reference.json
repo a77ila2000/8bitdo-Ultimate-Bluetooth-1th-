@@ -1,0 +1,21 @@
+{
+  "source": "https://gamepadla.com/8bitdo-ultimate-bluetooth-controller.html",
+  "model": "8BitDo Ultimate Bluetooth Controller, original generation",
+  "tests": [4686, 4687],
+  "date": "2025-03-12",
+  "tester": "John Punch",
+  "program": "Prometheus 82 v5.0.9.2",
+  "os": "Windows11 build10.0.26100",
+  "connection": "Dongle / 2.4GHz",
+  "mode": "XInput",
+  "official_firmware": "1.10",
+  "reported_polling_hz": 197.33,
+  "our_previous_instrumented_source_hz": 244.74472828154126,
+  "our_final_instrumented_source_hz": 289.08061573983537,
+  "numeric_final_vs_external_reference_percent": 46.496029868664344,
+  "our_two_trials_relative_percent": 18.115155235250867,
+  "controlled_stock_to_patched_comparison": false,
+  "reason": "External reference and our generated source tags differ in firmware, device and measurement method. Same-method stock1.11 baseline not measured.",
+  "verified_on": "2026-11-24",
+  "verification_method": "Primary-source search-indexed test records; direct automated page retrieval returned403"
+}

@@ -39,3 +39,9 @@ The original updater2.52 archive is downloaded by HTTPS and pinned, as are its e
 Community reports of disconnection/power-off were useful leads, not proof of this firmware fault.
 Moving a2.4G receiver to the dock still uses2.4G radio; it changes USB placement/path, not automatically to Bluetooth.
 The final firmware work does not claim to establish the cause of those reports.
+
+External stock reference: [Gamepadla's original Ultimate Bluetooth measurements](https://gamepadla.com/8bitdo-ultimate-bluetooth-controller.html),
+P82 #4686/#4687, John Punch,2025-03-12, official1.10, dongle/XInput, Prometheus82 v5.0.9.2,
+Windows11 build10.0.26100, reported polling197.33Hz. The primary page's search-indexed test records were checked on2026-11-24;
+direct automated page retrieval returned403. This external reference and our generated-tag rate use different methods/firmware.
+The46.50% numerical difference must not be presented as a controlled stock-to-patched improvement or button-latency result.

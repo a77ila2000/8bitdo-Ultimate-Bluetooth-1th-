@@ -10,7 +10,7 @@ GitHub 구현 비교, 자동 송신 계측, 최종 일반 통합본 복귀까지
 
 ## 다운로드·업데이트
 
-[실험 릴리스](https://github.com/a77ila2000/8bitdo-Ultimate-Bluetooth-1th-/releases/tag/v0.1.0-experimental)의
+[실험 릴리스](https://github.com/a77ila2000/8bitdo-Ultimate-Bluetooth-1th-/releases/tag/v0.1.1-experimental)의
 `UltimateBT-Gen1-Experimental-Windows-x64.zip`을 받아 **압축을 전부 풀어** 사용합니다.
 Windows 10/11 x64용이며 Python을 별도로 설치할 필요가 없습니다.
 
@@ -39,6 +39,20 @@ Switch 2 깨우기·백버튼 리매핑 패치를 합친 펌웨어가 아닙니�
 
 ## 실제 속도 결과
 
+[Gamepadla의 기본 펌웨어 실측](https://gamepadla.com/8bitdo-ultimate-bluetooth-controller.html)은
+동글·XInput·공식 v1.10에서 **197.33Hz**다(P82 #4686/#4687,2025-03-12).
+이번 최종 시험의 생성률289.081Hz는 이 외부 기본 실측값보다 **수치상 약46.50% 높다**.
+기본 실측보다 높은 갱신을 관측한 결과와, 직전 시험본 대비 추가 증가를 나누어 정리한다.
+
+| 구분 | 빈도 | 측정 기준 |
+|---|---:|---|
+| 기본 펌웨어의 외부 실측 참고값 |197.33Hz| Gamepadla, 공식1.10, 동글 XInput, Prometheus82 |
+| 이전2ms 통합 시험본 |244.745Hz| 이번 컨트롤러 내부 source 태그 생성 |
+| 최종 일정 수정본 |289.081Hz| 같은 source 태그 방식 |
+
+외부 기본값은 다른 펌웨어·장치·측정법의 자료다. 따라서46.50%는 **외부 참고값과의 수치 비교**이며
+동일 조건에서 입증한 순정 대비 향상률이 아니다. 현재 v1.11 순정의 동일 태그 A/B 및 물리 버튼 지연 검증은 남아 있다.
+
 컨트롤러 내부에서 임시 순번·tick 태그를 만들고 실제 수신기→Windows에서 받았습니다.
 아래 비교는 **이미 2ms 시험을 적용한 이전 통합본과 최종 일정 수정본의 두 순차 실행**입니다.
 공식 순정 펌웨어와의 A/B 결과가 아닙니다.
@@ -52,7 +66,7 @@ Switch 2 깨우기·백버튼 리매핑 패치를 합친 펌웨어가 아닙니�
 | PC에서 보이지 않은 source 번호 | 0 | 6 |
 | 유효 구간 | 46.514초 | 54.410초 |
 
-약 **18.12%** 차이를 관측했습니다. 반복 무작위 A/B·물리 버튼 접점 지연 시험은 아니며,
+직전 시험본에서 최종 일정 수정까지 **추가18.12%** 차이를 관측했습니다. 기본197.33Hz 대비 증가율을 뜻하지 않습니다. 반복 무작위 A/B·물리 버튼 접점 지연 시험은 아니며,
 6개 번호 공백의 원인을 전파 손실로 단정할 수 없습니다. USB 2ms 요청 기회와 새 입력 생성률은 서로 다릅니다.
 임시 자동 입력 코드는 최종 배포 이미지에 없습니다. 일반 앱 105,472바이트 전체가 재읽기와 일치했고 뒤 512바이트는 FF임을 확인했습니다.
 
@@ -91,5 +105,7 @@ pwsh -File windows/build.ps1
 The Windows release downloads and verifies official originals, generates flashable DATs and official restore files locally,
 and uses an adapter around the unmodified manufacturer's file-update API. No manufacturer firmware/DLL is redistributed.
 Observed source-tag rate changed from244.7 to289.1Hz in two sequential instrumented trials, not from a stock baseline.
+Gamepadla's external stock1.10 dongle/XInput reference is197.33Hz. Our final number is numerically46.50% higher;
+different firmware and methods mean this is not a controlled stock-to-patched gain. The18.12% figure compares our two trials.
 500Hz, physical button latency improvement and the original power-off symptom's resolution are unproven.
 Injected measurement tags are absent from the final normal image. Read the Korean update/recovery guide before writing.

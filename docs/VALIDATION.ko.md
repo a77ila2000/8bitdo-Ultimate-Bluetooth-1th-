@@ -15,6 +15,17 @@
 
 ## 자동 계측 해석
 
+### 기본 실측 참고값과 추가 향상 구분
+
+[Gamepadla 원래 Ultimate Bluetooth 기록](https://gamepadla.com/8bitdo-ultimate-bluetooth-controller.html)의
+동글/XInput·공식1.10 P82 #4686/#4687은197.33Hz다.
+John Punch,2025-03-12, Prometheus82 v5.0.9.2, Windows11 build10.0.26100 조건이다.
+이 외부 기본 실측값과 이번 최종 생성률289.081Hz의 수치 차이는 약46.50%다.
+기본 실측보다 높은 빈도를 관측한 정황으로 기재하되, 장치·펌웨어·입력 생성/측정법이 달라 직접 A/B 효과 크기로 확정하지 않는다.
+기존18.115%는244.745→289.081, 즉 **이미 수정한 직전 시험본 대비 추가 차이**다.
+순정1.11에서 같은 source 태그로 다시 측정한 값은 확보하지 않았다.
+[조건을 보존한 참고 자료](../evidence/external-stock-reference.json).
+
 순번은 송신 처리 경로에 넣은 source 태그이며 전파 ACK 카운터가 아니다.
 앞선 유효 구간은11385개 관측/11384 source 증가/46.51377초,
 후속은15724개 관측/15729 source 증가/54.4104279초다.
