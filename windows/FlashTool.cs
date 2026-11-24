@@ -79,8 +79,11 @@ class FlashTool {
     static void Identify(bool controller) {
         var start=new ProcessStartInfo(Path.Combine(Root,"PatchTool.exe"),"identify "+(controller?"controller":"receiver"));
         start.UseShellExecute=false;start.CreateNoWindow=true;
+        start.RedirectStandardOutput=true;start.RedirectStandardError=true;
         using(var p=Process.Start(start)) {
+            var output=p.StandardOutput.ReadToEndAsync();var errors=p.StandardError.ReadToEndAsync();
             if(!p.WaitForExit(20000)){p.Kill();throw new Exception("Read-only identity check timed out; no flash started");}
+            Console.Write(output.Result);Console.Write(errors.Result);
             if(p.ExitCode!=0)throw new Exception("Boot identity did not match target. No flash started; do not force model checks");
         }
     }

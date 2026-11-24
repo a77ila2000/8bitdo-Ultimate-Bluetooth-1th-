@@ -8,6 +8,7 @@
 | 첫2ms | 한 세트 기록, 주기 바이트2·수신기Full-Speed IN2 확인 |500Hz 새 입력, 절대 지연 |
 | 최종 enhanced | 두 대 앱105472바이트 전체 일치/뒤512바이트FF. A는2.4G, B는USB 방향/ABXY/양스틱/범퍼/트리거 | B의RF 속도, 두 세트 장기 게임 |
 | 자동 계측 | 실제 컨트롤러 태그를 실제 수신기→Windows에서 관측 | 물리 버튼 접점 시점, source/PC clock 동기화 |
+| Receiver B | 공개 어댑터 기록100%/오류 없음, Full-Speed 활성IN2/OUT8,15초2.4G 입력·연결 해제 없음 | 수신기 전체flash readback, B의source 태그속도·장기 안정성 |
 
 자동 계측 임시 코드는 최종 일반 이미지에 없으며 이 저장소는 진단 이미지를 배포하지 않는다.
 최종 앱 전체 읽기 일치는 [집계 기록](../evidence/final-readback-verification.json)에 보존했다.
@@ -61,7 +62,9 @@ ARM 명령·주변장치·정착 시간·실제 전압을 모두 검증한 것�
 - 수정된 공개 어댑터 경로로 Controller B 기록100%/오류 콜백없음/전체 읽기 일치와USB 물리 입력을 확인했다. [집계](../evidence/controller-b-final-validation.json).
 - 준비 도구의 폴더 평탄화 오류를 재현한 회귀 검사를 실패→통과로 확인했다. 공식 ZIP의 `data`와 초기 txt 파일을 보존하고 재준비 시 실제 로그를 덮어쓰지 않는다.
 - 불완전한 runtime은 DLL 로드 전 종료2로 거부하고, 온전한 새 runtime의 준비·재준비·DLL 로드를 확인했다.
-- 수신기 독립 identity preflight의 실제 응답 호환성은 새 wrapper에서는 여전히 미검증이다. 불일치 시 중단하며 우회하지 않는다.
+- Receiver B의 command8 실측은 길이4/total0/address0/checksum0/PID6008이다. 해당 수신기 스키마만 허용하고 본체의 CRC 검사는 유지한다.
+- 일반/수신기 스키마 혼동·상태·명령·길이·주소·모델·CRC 변조를 거부하는 회귀 검사와 실제 수신기 식별/기록100%/오류 없음/종료0을 확인했다.
+- Receiver B의 활성IN2/OUT8과2.4G 물리 입력을 확인했다. 대기PID3109의interval4는 그대로다. [공개 집계](../evidence/receiver-b-final-validation.json).
 
 ## 남은 항목
 

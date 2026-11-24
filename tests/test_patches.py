@@ -1,6 +1,7 @@
 from pathlib import Path
 import io
 import zipfile
+import struct
 import os
 import pytest
 import patcher
@@ -8,6 +9,22 @@ import patch_source as source
 import receiver_format
 from vendor import cryptdo8
 from tests.instruction_vm import ThumbSampler, battery_run, Replay
+from windows.boot_protocol import parse_reply, crc16
+
+
+def test_exact_receiver_identity_schema_and_controller_crc_remain_strict():
+    receiver=bytes.fromhex('00050000080004000000000000000000000008600000')+bytes(42)
+    assert parse_reply(receiver,8,0,4,'receiver')==b'\x08\x60\0\0'
+    for target in ('controller','unknown'):
+        with pytest.raises(ValueError):parse_reply(receiver,8,0,4,target)
+    for offset in (0,2,4,6,8,10,14,18):
+        broken=bytearray(receiver);broken[offset]^=1
+        with pytest.raises(ValueError):parse_reply(bytes(broken),8,0,4,'receiver')
+    standard=bytearray(receiver);standard[18]=7
+    struct.pack_into('<H',standard,8,crc16(standard[18:22]));struct.pack_into('<I',standard,10,4)
+    assert parse_reply(bytes(standard),8,0,4,'controller')==b'\x07\x60\0\0'
+    standard[18]^=1
+    with pytest.raises(ValueError):parse_reply(bytes(standard),8,0,4,'controller')
 
 
 def test_updater_preserves_required_data_subdirectory(tmp_path, monkeypatch):

@@ -60,13 +60,18 @@ RF 패킷을500Hz로 확인한 것이 아니며 controller+receiver를 같이 �
 수정 없는 제조사 x86 DLL의 `_updateGampeWithFile@4`(stdcall UTF-16 path)를 사용한다.
 설정→ROM은 제조사의64바이트 `81 05 00 51 00 ...` 명령이다.6007은 설정,3208은 실제 USB boot PID다.
 프리플라이트는 command8의 firmware type6007/6008을 확인한다. 컨트롤러는 command5로 고정 버전 레코드01017040의111을 확인한다.
+실제 Receiver B의 command8은 status0/cmd8/length4/total0/address0/checksum0/data08600000으로 응답했다.
+이 수신기 형식에는 CRC가 제공되지 않는다. 정확히 그 형태와 모델6008일 때만 별도 수신기 스키마로 받는다.
+컨트롤러·버전 읽기·다른 길이/주소/상태/모델에는 이 예외를 허용하지 않으며 일반 응답의 CRC 검사를 유지한다.
+[순수 파서](../windows/boot_protocol.py)와 변조/모델 혼동 회귀 검사가 있다. 제조사 쓰기 API의 PID 검증도 보존한다.
 장치 경로를 인수로 지정할 수 없는 제조사 API이므로8BitDo USB 장치를 한 대로 제한한다.
 
 진행 getter는100을 반환하며 내부 값을0으로 바꾸므로 **최고값**을 보존한다.
 `dll_errorUpdate`는 상태 조회가 아니라 중단/정리 함수이므로 폴링하지 않는다.
 콜백을 루트로 유지하고 모델/PID 강제 변경 export를 호출하지 않는다.
 공개 wrapper의 본체 기록 경로는 Controller B에서100%·전체 앱 읽기 일치·일반 입력을 확인했다.
-v0.1.2는 공식 ZIP의 `data` 계층/초기 로그를 보존하며 누락 시 DLL 로드 전에 거부한다. 수신기 새 preflight 실물 시험은 별도 미확인이다.
+v0.1.2는 공식 ZIP의 `data` 계층/초기 로그를 보존하며 누락 시 DLL 로드 전에 거부한다.
+v0.1.3에서 수신기 실제 스키마 검증을 추가한 뒤 Receiver B의 식별과 기록100%/오류 없음/종료0도 확인했다.
 
 ## 충돌·불포함
 

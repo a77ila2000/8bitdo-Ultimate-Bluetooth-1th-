@@ -3,6 +3,7 @@
 import ctypes as c
 from ctypes import wintypes as w
 import json,struct,uuid
+from windows.boot_protocol import crc16, parse_reply
 INVALID=c.c_void_p(-1).value
 setup=c.WinDLL('setupapi',use_last_error=True)
 kernel=c.WinDLL('kernel32',use_last_error=True)
@@ -91,15 +92,7 @@ def io(handle,data=None):
     finally:k.CloseHandle(event)
 
 
-def crc16(data):
-    crc=65535
-    for value in data:
-        crc^=value
-        for _ in range(8):crc=(crc>>1)^0xa001 if crc&1 else crc>>1
-    return crc
-
-
-def command(handle,cmd,address=0,length=4):
+def command(handle,cmd,address=0,length=4,target='controller'):
     if (cmd,address,length) not in ((8,0,4),(5,0x01017040,8)):
         raise ValueError('Only identity and fixed version read permitted')
     packet=bytearray(64);packet[0]=5
@@ -109,12 +102,7 @@ def command(handle,cmd,address=0,length=4):
     for _ in range(3):
         reply=io(handle)
         if reply[:2]!=b'\0\x05' or int.from_bytes(reply[4:6],'little')!=cmd:continue
-        if int.from_bytes(reply[2:4],'little')!=0:raise ValueError('Bootloader rejected query')
-        n,checksum,total,offset=struct.unpack_from('<HHII',reply,6)
-        if (n,total,offset)!=(length,length,address):raise ValueError('Identity response header mismatch')
-        data=reply[18:18+n]
-        if crc16(data)!=checksum:raise ValueError('Identity response CRC mismatch')
-        return data
+        return parse_reply(reply,cmd,address,length,target)
     raise ValueError('No matching identity response')
 
 
@@ -133,7 +121,7 @@ def identify(target):
             usage,page,input_size,output_size=struct.unpack_from('<4H',caps)
             if (input_size,output_size)!=(65,65):raise ValueError(f'Unrecognized HID report lengths{input_size}/{output_size}')
         finally:hid.HidD_FreePreparsedData(preparsed)
-        identity=command(handle,8)
+        identity=command(handle,8,target=target)
         expected = 0x6007 if target == 'controller' else 0x6008
         if identity != struct.pack('<I', expected): raise ValueError('Boot firmware type does not match selected target')
         if target == 'receiver': return {'verified_pid':hex(expected),'scope':'Read-only command8 identity; no flash/erase'}

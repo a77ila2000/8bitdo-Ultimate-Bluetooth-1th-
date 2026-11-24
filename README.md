@@ -10,7 +10,7 @@ GitHub 구현 비교, 자동 송신 계측, 최종 일반 통합본 복귀까지
 
 ## 다운로드·업데이트
 
-[실험 릴리스](https://github.com/a77ila2000/8bitdo-Ultimate-Bluetooth-1th-/releases/tag/v0.1.2-experimental)의
+[실험 릴리스](https://github.com/a77ila2000/8bitdo-Ultimate-Bluetooth-1th-/releases/tag/v0.1.3-experimental)의
 `UltimateBT-Gen1-Experimental-Windows-x64.zip`을 받아 **압축을 전부 풀어** 사용합니다.
 Windows 10/11 x64용이며 Python을 별도로 설치할 필요가 없습니다.
 
@@ -30,7 +30,7 @@ Windows 10/11 x64용이며 Python을 별도로 설치할 필요가 없습니다.
 | `controller-conservative.dat` | 최초 ADC 다섯 번째 정상 샘플 경계 + 배터리 경고 카운터 | 컨트롤러 2대 기록·재연결·짧은 USB 입력·셋톱 홈 확인 |
 | `controller-timing.dat` | 위 수정 + 2.4G 위치의 2ms 계산 | 한 대 중간 시험본. 이력 재현 전용; 업데이트 메뉴에서 제외 |
 | `controller-enhanced.dat` | 위 수정 + 시작 tick 기준 일정 + 변경된 스틱 활동 판정 | 두 대 전체 앱 재읽기 일치. A는2.4G, B는USB 물리 입력 확인 |
-| `receiver-2ms.dat` | 활성 XInput IN USB interval 4→2, 관련 CRC 갱신 | 수신기 한 대 기록·Full-Speed 12Mbps IN2/OUT8 확인 |
+| `receiver-2ms.dat` | 활성 XInput IN USB interval 4→2, 관련 CRC 갱신 | 수신기 두 대 기록·Full-Speed12Mbps IN2/OUT8과2.4G 입력 확인 |
 | `RESTORE-*.dat` | 수정 없는 공식 v1.11 / v1.04 | 공식 원본과 동일 해시. 사용자별 보정·페어링 백업 파일은 아님 |
 
 배터리 **경고** 판정과 ADC 경계만 수정했습니다. 보호 회로·저전압 차단·전부 비정상 샘플의 기존 복구 경로를 끄지 않았습니다.
@@ -83,7 +83,9 @@ v0.1.2는 공식 updater의 `data` 하위 폴더를 누락했던 준비 오류�
 `Update.cmd`는 매번 준비 상태를 확인·복구하고, 어댑터도 폴더가 없으면 DLL 로드 전에 중단합니다.
 수정된 공개 어댑터 경로로 두 번째 컨트롤러에 실제 기록100%·전체 앱 재읽기·USB 물리 입력을 확인했습니다.
 이제 컨트롤러 두 대 모두 enhanced지만 속도 태그 시험은 첫 번째 한 대의 결과입니다. [두 번째 장치 검증](evidence/controller-b-final-validation.json).
-공개 수신기 identity preflight는 같은 프로토콜의 안전한 읽기만 사용하며, 응답이 다르면 쓰기 전에 중단합니다.
+v0.1.3은 실제 수신기의 CRC 없는 command8 응답을 정확한 모델6008/길이/주소/상태 조건으로 구분합니다.
+컨트롤러의 기존 CRC 검사는 유지합니다. 공개 수신기 identity preflight와 실제 기록은 두 번째 수신기에서도 통과했습니다.
+두 번째 세트도 활성 IN2/OUT8과2.4G 입력을 확인했습니다. [수신기 검증](evidence/receiver-b-final-validation.json).
 확인을 건너뛰거나 모델을 강제로 맞추는 기능은 없습니다.
 
 ### 소스로 재현

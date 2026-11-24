@@ -1,0 +1,106 @@
+{
+  "receiver": "Receiver B",
+  "date": "2026-11-24",
+  "official_base_version": "1.04",
+  "candidate_dat_sha256": "e47eb1b0eddcd817f03573671f58e98c452387ba67aff01e8852229d39c1ce95",
+  "flash_exit_code": 0,
+  "flash_max_progress": 100,
+  "flash_error_callback": false,
+  "boot_identity": {
+    "status": 0,
+    "command": 8,
+    "length": 4,
+    "total": 0,
+    "address": 0,
+    "checksum": 0,
+    "data_hex": "08600000",
+    "scope": "Exact CRC-free receiver identity schema; controller CRC requirements unchanged"
+  },
+  "usb_speed": "Full-Speed12Mbps",
+  "before_active_intervals": {
+    "in_ms": 4,
+    "out_ms": 8
+  },
+  "after_active_intervals": {
+    "in_ms": 2,
+    "out_ms": 8
+  },
+  "physical_wireless_input_seconds": 15.002,
+  "buttons": {
+    "UP": {
+      "down": 6,
+      "up": 6
+    },
+    "DOWN": {
+      "down": 4,
+      "up": 4
+    },
+    "LEFT": {
+      "down": 7,
+      "up": 7
+    },
+    "RIGHT": {
+      "down": 3,
+      "up": 3
+    },
+    "LB": {
+      "down": 3,
+      "up": 3
+    },
+    "RB": {
+      "down": 3,
+      "up": 3
+    },
+    "A": {
+      "down": 8,
+      "up": 7
+    },
+    "B": {
+      "down": 4,
+      "up": 4
+    },
+    "X": {
+      "down": 11,
+      "up": 10
+    },
+    "Y": {
+      "down": 6,
+      "up": 6
+    }
+  },
+  "axes_min": {
+    "lx": -32768,
+    "ly": -32768,
+    "rx": 0,
+    "ry": -721
+  },
+  "axes_max": {
+    "lx": 32767,
+    "ly": 32767,
+    "rx": 63,
+    "ry": 0
+  },
+  "trigger_ranges": {
+    "lt": [
+      0,
+      255
+    ],
+    "rt": [
+      0,
+      255
+    ]
+  },
+  "wireless_disconnects_observed": 0,
+  "current_idle_state": {
+    "buttons": 0,
+    "lt": 0,
+    "rt": 0,
+    "lx": 0,
+    "ly": 0,
+    "rx": 0,
+    "ry": 0
+  },
+  "full_receiver_flash_readback_performed": false,
+  "actual_500hz_proven": false,
+  "controller_b_source_tag_rate_measured": false
+}
