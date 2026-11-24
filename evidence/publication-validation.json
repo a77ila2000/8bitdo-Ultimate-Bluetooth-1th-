@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-24",
+  "scope": "Public Windows package checks; no device flashing performed",
+  "python": "3.11.9",
+  "pyinstaller": "6.17.0",
+  "pytest": "8 tests passed, including 9240 ADC,1536 battery states and1080 final scheduler cases",
+  "fresh_official_download_and_six_dat_hashes": true,
+  "standalone_no_python_required_generation": true,
+  "flash_adapter_checks": [
+    {
+      "args": [
+        "--check-runtime"
+      ],
+      "exit_code": 0
+    },
+    {
+      "args": [
+        "--validate-image",
+        "controller-conservative"
+      ],
+      "exit_code": 0
+    },
+    {
+      "args": [
+        "--validate-image",
+        "controller-enhanced"
+      ],
+      "exit_code": 0
+    },
+    {
+      "args": [
+        "--validate-image",
+        "receiver-2ms"
+      ],
+      "exit_code": 0
+    },
+    {
+      "args": [
+        "--validate-image",
+        "RESTORE-controller-v1.11"
+      ],
+      "exit_code": 0
+    },
+    {
+      "args": [
+        "--validate-image",
+        "RESTORE-receiver-v1.04"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "unknown_and_modified_images_rejected": true,
+  "executables": {
+    "PatchTool.exe": "487341fd2eda1053e7d4a8bc043eb21a553aa04ad7b82d5837149eb795c036e4",
+    "FlashTool.exe": "99299cf85f71261a1698c7261a94cdb524d48e2362bcabc5bad86c533f2c4b80"
+  }
+}

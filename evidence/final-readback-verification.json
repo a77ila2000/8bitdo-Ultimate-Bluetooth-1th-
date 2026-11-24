@@ -1,0 +1,8 @@
+{
+  "normal_app_full_readback_match": true,
+  "normal_app_bytes": 105472,
+  "normal_app_sha256": "825e03d4c9f920e885bdb6a20fee519a4a28863d51ba4eb91e66f3b8e53a997b",
+  "diagnostic_code_tail_erased": true,
+  "verified_erased_tail_bytes": 512,
+  "readback_total_bytes": 105984
+}

@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "stock_sha256": "099101a6ca62321b76de2b7c61452342be794956a622aba542120125d91ffb97",
+  "dat_sha256": "e47eb1b0eddcd817f03573671f58e98c452387ba67aff01e8852229d39c1ce95",
+  "dat_bytes": 262172,
+  "edits": [
+    {
+      "offset": "0x401c",
+      "before": "73",
+      "after": "df"
+    },
+    {
+      "offset": "0x401d",
+      "before": "16",
+      "after": "f2"
+    },
+    {
+      "offset": "0x401e",
+      "before": "37",
+      "after": "2f"
+    },
+    {
+      "offset": "0x401f",
+      "before": "32",
+      "after": "76"
+    },
+    {
+      "offset": "0x403c",
+      "before": "23",
+      "after": "e5"
+    },
+    {
+      "offset": "0x403d",
+      "before": "c6",
+      "after": "0a"
+    },
+    {
+      "offset": "0x403e",
+      "before": "e6",
+      "after": "1e"
+    },
+    {
+      "offset": "0x403f",
+      "before": "04",
+      "after": "82"
+    },
+    {
+      "offset": "0x14fc0",
+      "before": "f2",
+      "after": "f4"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "before_hz": 244.74472828154126,
+  "after_hz": 289.08061573983537,
+  "relative_increase_percent": 18.115155235250867,
+  "observed_after_hz": 288.97034276034276,
+  "before_median_ms": 4.031299999951443,
+  "after_median_ms": 3.84940000003553,
+  "before_p99_ms": 8.225705000131711,
+  "after_p99_ms": 8.130960000125924,
+  "after_unobserved_ids": 6,
+  "caveat": "Two sequential runs, not repeated randomized comparison; source generator bypasses physical buttons"
+}

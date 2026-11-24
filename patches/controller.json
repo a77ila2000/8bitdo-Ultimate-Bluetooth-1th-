@@ -1,0 +1,287 @@
+{
+  "format": 1,
+  "base_address": "0x01018000",
+  "stock_plain_sha256": "fa653c10bba23ec346ea92b85493a37b0b6dda53534c7257214c4d41f80ada8d",
+  "stock_plain_bytes": 104960,
+  "variants": {
+    "controller-conservative": {
+      "plain_bytes": 104960,
+      "plain_sha256": "ae5f5a21784b4839294c4547c5d75f120287972220b0214db422f55f189fcb6e",
+      "dat_sha256": "78d7364aad506d5c7b33fa0db5712524bc8f1f0a49fe57f9a43e90b4a198b0b7",
+      "dat_bytes": 104988,
+      "edits": [
+        {
+          "offset": "0x6aba",
+          "before": "01",
+          "after": "1c"
+        },
+        {
+          "offset": "0xbeec",
+          "before": "204680218843094909780843",
+          "after": "80200a4909780840204300bf"
+        }
+      ]
+    },
+    "controller-timing": {
+      "plain_bytes": 104960,
+      "plain_sha256": "d80d79241cf32db6ae8dcbf1e10b0a124bec502216c2be95876556ae16ef50d9",
+      "dat_sha256": "33b2b62d87cd65fb52caf1a1cc13190d8f3ad31a2ef70459c8a3d5307882c693",
+      "dat_bytes": 104988,
+      "edits": [
+        {
+          "offset": "0x69e4",
+          "before": "f8",
+          "after": "08"
+        },
+        {
+          "offset": "0x69e6",
+          "before": "04460c48006a",
+          "after": "12f08bff08bd"
+        },
+        {
+          "offset": "0x6aba",
+          "before": "01",
+          "after": "1c"
+        },
+        {
+          "offset": "0xbeec",
+          "before": "204680218843094909780843",
+          "after": "80200a4909780840204300bf"
+        },
+        {
+          "offset": "0x19900",
+          "before": "00000000000000000000",
+          "after": "f8b50446022c07d01448"
+        },
+        {
+          "offset": "0x1990b",
+          "before": "0000000000000000000000000000000000000000",
+          "after": "78012808d1052c01d00a2c04d102240126fa256d"
+        },
+        {
+          "offset": "0x19920",
+          "before": "00000000000000000000000000000000",
+          "after": "05e005212046e6f78bfcc6b2c8250c48"
+        },
+        {
+          "offset": "0x19931",
+          "before": "00",
+          "after": "6a"
+        },
+        {
+          "offset": "0x19933",
+          "before": "00",
+          "after": "07"
+        },
+        {
+          "offset": "0x19935",
+          "before": "00000000000000000000000000000000000000000000000000000000000000000000000000",
+          "after": "0f811c0a48e6f781fc2946e6f77efc7043f6f7f7fb074801780470a14201d0f8f706fdf8bd"
+        },
+        {
+          "offset": "0x1995b",
+          "before": "00000000",
+          "after": "bfaa0102"
+        },
+        {
+          "offset": "0x19960",
+          "before": "000000",
+          "after": "40850f"
+        },
+        {
+          "offset": "0x19965",
+          "before": "000000000000",
+          "after": "b0710b650202"
+        }
+      ]
+    },
+    "controller-enhanced": {
+      "plain_bytes": 105472,
+      "plain_sha256": "825e03d4c9f920e885bdb6a20fee519a4a28863d51ba4eb91e66f3b8e53a997b",
+      "dat_sha256": "dee297b7c1a5f0b0646f05fc16f792be94df1e52cc478338f1780612fd897767",
+      "dat_bytes": 105500,
+      "edits": [
+        {
+          "offset": "0x5ae4",
+          "before": "10b504460af086fd",
+          "after": "004b1847011a0301"
+        },
+        {
+          "offset": "0x5b1e",
+          "before": "0e",
+          "after": "13"
+        },
+        {
+          "offset": "0x5b20",
+          "before": "e7f8",
+          "after": "9fff"
+        },
+        {
+          "offset": "0x5b40",
+          "before": "0e",
+          "after": "13"
+        },
+        {
+          "offset": "0x5b42",
+          "before": "d6f8",
+          "after": "8eff"
+        },
+        {
+          "offset": "0x69e4",
+          "before": "f8",
+          "after": "08"
+        },
+        {
+          "offset": "0x69e6",
+          "before": "04460c48006a",
+          "after": "12f08bff08bd"
+        },
+        {
+          "offset": "0x6aba",
+          "before": "01",
+          "after": "1c"
+        },
+        {
+          "offset": "0x8106",
+          "before": "03",
+          "after": "11"
+        },
+        {
+          "offset": "0x8108",
+          "before": "09ff",
+          "after": "dbfc"
+        },
+        {
+          "offset": "0xbeec",
+          "before": "204680218843094909780843",
+          "after": "80200a4909780840204300bf"
+        },
+        {
+          "offset": "0x19900",
+          "before": "00000000000000000000",
+          "after": "f8b50446022c07d01448"
+        },
+        {
+          "offset": "0x1990b",
+          "before": "0000000000000000000000000000000000000000",
+          "after": "78012808d1052c01d00a2c04d102240126fa256d"
+        },
+        {
+          "offset": "0x19920",
+          "before": "00000000000000000000000000000000",
+          "after": "05e005212046e6f78bfcc6b2c8250c48"
+        },
+        {
+          "offset": "0x19931",
+          "before": "00",
+          "after": "6a"
+        },
+        {
+          "offset": "0x19933",
+          "before": "00",
+          "after": "07"
+        },
+        {
+          "offset": "0x19935",
+          "before": "00000000000000000000000000000000000000000000000000000000000000000000000000",
+          "after": "0f811c0a48e6f781fc2946e6f77efc7043f6f7f7fb074801780470a14201d0f8f706fdf8bd"
+        },
+        {
+          "offset": "0x1995b",
+          "before": "00000000",
+          "after": "bfaa0102"
+        },
+        {
+          "offset": "0x19960",
+          "before": "000000",
+          "after": "40850f"
+        },
+        {
+          "offset": "0x19965",
+          "before": "000000000000",
+          "after": "b0710b650202"
+        },
+        {
+          "offset": "0x19a00",
+          "before": "0000000000000000000000000000000000000000000000",
+          "after": "10b5044603490968034a1160f6f7f4fdecf76cf84c0502"
+        },
+        {
+          "offset": "0x19a18",
+          "before": "000000",
+          "after": "284402"
+        },
+        {
+          "offset": "0x19a60",
+          "before": "0000000000000000",
+          "after": "10b50a4a90420ed1"
+        },
+        {
+          "offset": "0x19a69",
+          "before": "0000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "after": "290cd1084a1278012a08d1074a1278022a04d1064a12680132426010bdfaf733f910bd1c4402"
+        },
+        {
+          "offset": "0x19a90",
+          "before": "000000",
+          "after": "aa0102"
+        },
+        {
+          "offset": "0x19a94",
+          "before": "000000",
+          "after": "650202"
+        },
+        {
+          "offset": "0x19a98",
+          "before": "000000",
+          "after": "284402"
+        },
+        {
+          "offset": "0x19ac0",
+          "before": "000000000000",
+          "after": "10b5f2f72bfa"
+        },
+        {
+          "offset": "0x19ac7",
+          "before": "0000000000",
+          "after": "2812d10a48"
+        },
+        {
+          "offset": "0x19acd",
+          "before": "00",
+          "after": "68"
+        },
+        {
+          "offset": "0x19acf",
+          "before": "00000000000000000000000000000000000000",
+          "after": "21c943884209d00422c1b2772907d3872905d8"
+        },
+        {
+          "offset": "0x19ae3",
+          "before": "000000",
+          "after": "0a013a"
+        },
+        {
+          "offset": "0x19ae7",
+          "before": "000000",
+          "after": "2af6d1"
+        },
+        {
+          "offset": "0x19aeb",
+          "before": "00",
+          "after": "20"
+        },
+        {
+          "offset": "0x19aed",
+          "before": "0000000000",
+          "after": "e0012010bd"
+        },
+        {
+          "offset": "0x19af3",
+          "before": "00000000",
+          "after": "bf380202"
+        }
+      ]
+    }
+  }
+}

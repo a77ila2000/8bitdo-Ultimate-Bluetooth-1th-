@@ -1,0 +1,15 @@
+/cache/
+/output/
+/vendor-runtime/
+/dist/
+/build/
+*.spec
+__pycache__/
+*.pyc
+*.dat
+*.bin
+*.exe
+*.dll
+*.log
+*.zip
+.venv/

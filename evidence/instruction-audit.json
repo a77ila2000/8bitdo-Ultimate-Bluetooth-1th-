@@ -1,0 +1,16 @@
+{
+  "scope": "Historical actual-Thumb instruction tests with peripheral hooks; not full MCU emulation",
+  "adc_battery": {
+    "battery_state_cases": 1536,
+    "battery_sequence_cases": 4,
+    "adc_cases": 9240
+  },
+  "initial_2ms_cases": 320,
+  "first_integrated_cases": 1373,
+  "final_physical_selector_cases": 1080,
+  "final_hardware_readback": true,
+  "source_tick_ms_before": 1.991342,
+  "source_tick_ms_after": 1.991232,
+  "physical_button_latency_measured": false,
+  "long_duration_poweroff_fix_proven": false
+}

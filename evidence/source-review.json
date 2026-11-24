@@ -1,0 +1,31 @@
+{
+  "repositories": [
+    {
+      "repo": "https://github.com/alphaorderly/ultimate-bluetooth-updater",
+      "commit": "50ddc817b63ee548642436d9d272d019205fb73f",
+      "decision": "Exact1st-gen model; wake/remap features are not2.4G latency fixes; full patch overlaps existing timing stub"
+    },
+    {
+      "repo": "https://github.com/gomezluisj/8bitdo-ultimate-re",
+      "commit": "0e4fc809d46764a61110ac6c716dc4482dc0b890",
+      "decision": "Exact80NA1.11 model; wake/reconnect only; uses guarded app readback useful for validation"
+    },
+    {
+      "repo": "https://github.com/craigmdennis/8bitdo-ultimate-toolkit",
+      "commit": "4539ad29e35edf4a7974746b8735b63769673a0b",
+      "decision": "Ultimate2C Telink model; binary patches incompatible; activity and faster-scan concepts compared against1st-gen code"
+    },
+    {
+      "repo": "https://github.com/MiguelSanzBr/8bitdo-ultimate2-linux",
+      "commit": "03957a0c165b214a501337279149144e36764af3",
+      "decision": "First-gen configuration protocol reference only; no foreign firmware installed"
+    }
+  ],
+  "exact_model_patch_conflicts": [
+    {
+      "start": "0x1031838",
+      "end": "0x103192c",
+      "overlap": "Existing2ms timing code"
+    }
+  ]
+}

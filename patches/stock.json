@@ -1,0 +1,19 @@
+{
+  "controller": {
+    "url": "http://dl.8bitdo.com:8080/firmwareFile/upload/78db64eb-7005-4220-927e-19424aff8fd7.dat",
+    "bytes": 104988,
+    "sha256": "1030145fec364aceb55ceaed221396131dcf02eaaeeb8bd9ad4044ba5596074d",
+    "version": "1.11"
+  },
+  "receiver": {
+    "url": "http://dl.8bitdo.com:8080/firmwareFile/upload/77989cf9-3950-4475-9410-0268c12853f9.dat",
+    "bytes": 262172,
+    "sha256": "099101a6ca62321b76de2b7c61452342be794956a622aba542120125d91ffb97",
+    "version": "1.04"
+  },
+  "updater": {
+    "url": "https://download.8bitdo.com/Tools/FirmwareUpdater/8BitDo_Firmware_Updater_Win.zip",
+    "bytes": 19148000,
+    "sha256": "88fd6af7eb62a33546415db75a40907ef9120d14f10c6cd7a4337ea59994a26f"
+  }
+}
